@@ -46,8 +46,6 @@ public class PaddleScript : MonoBehaviour
 		// Floor Helper special item
         if (target.gameObject.CompareTag("FloorHelper") && FloorHelperScript.stillRemaining == true)
         {
-			//Debug.Log("FloorHelperScript.isFloorActive: " + FloorHelperScript.isFloorActive);
-
             if (FloorHelperScript.isFloorActive == false)
             {
 				IEnumerator RemoveAfterSeconds(float seconds, GameObject gameObject)
@@ -58,7 +56,6 @@ public class PaddleScript : MonoBehaviour
 				// Instantiate floor helper below the paddle
             	Transform floorHelper = Instantiate(floorHelperPrefab, new Vector3(0, -4.5F, 0), Quaternion.identity);
 				floorHelper.gameObject.SetActive(true);
-				//Debug.Log("Generate floor helper");
 				StartCoroutine(RemoveAfterSeconds(FloorHelperScript.floorDuration, floorHelper.gameObject));	
             }
         }    

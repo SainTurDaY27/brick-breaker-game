@@ -20,15 +20,8 @@ public class BrickScript : MonoBehaviour
                 index--;
             }
             bricksWithFloorHelperSet.Add(randomBrickIndex);
-            
         }
 
-        // Display each element in bricksWithPaddleResizerSet
-        //foreach (int element in bricksWithFloorHelperSet)
-        //{
-        //    Debug.Log("bricksWithFloorHelperSet: " + element.ToString());
-        //}
-        
         // random index for brick with PaddleResizer
         for (int index = 0; index < 7; index++)
         {
@@ -41,12 +34,6 @@ public class BrickScript : MonoBehaviour
             bricksWithPaddleResizerSet.Add(randomBrickIndex);
             
         }
-        
-        // Display each element in bricksWithPaddleResizerSet
-        //foreach (int element in bricksWithPaddleResizerSet)
-        //{
-        //    Debug.Log("bricksWithPaddleResizerSet: " + element.ToString());
-        //}
     }
 
     // Update is called once per frame
