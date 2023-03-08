@@ -6,7 +6,7 @@ public class BallScript : MonoBehaviour
 {
     private Rigidbody2D rb;
 	private float minVelocity = 7F;
-    private float maxVelocity = 8F;
+    private float maxVelocity = 9F;
     private bool isColliding = false;
 	public int brickCollisionCount = 0;
 	public Transform paddleResizer;
@@ -26,8 +26,18 @@ public class BallScript : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 // Force the ball to move at the begining of the game
-                rb.AddForce(Vector2.right * 200);
-                rb.AddForce(Vector2.up * 400);
+				rb.AddForce(Vector2.up * 400);
+				
+				// Randomly choose the direction of the ball
+				float random = Random.value;
+				if (random < 0.5F)
+                {
+					rb.AddForce(Vector2.left * Random.Range(200, 400));
+                }
+                else if (random > 0.5F)
+                {
+                    rb.AddForce(Vector2.right * Random.Range(200, 400));
+                }
                 GameScript.isPlaying = true;
             }
         }
