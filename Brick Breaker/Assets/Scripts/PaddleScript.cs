@@ -23,6 +23,7 @@ public class PaddleScript : MonoBehaviour
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb.position = new Vector2(mousePosition.x, rb.position.y);
         }
+
         // update paddle size
         transform.localScale = new Vector2(size, 1);       
     }
@@ -53,6 +54,7 @@ public class PaddleScript : MonoBehaviour
            			yield return new WaitForSeconds(seconds);
             		gameObject.SetActive(false);
         		}
+
 				// Instantiate floor helper below the paddle
             	Transform floorHelper = Instantiate(floorHelperPrefab, new Vector3(0, -4.5F, 0), Quaternion.identity);
 				floorHelper.gameObject.SetActive(true);
