@@ -10,16 +10,10 @@ public class GroundScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     private void OnTriggerEnter2D(Collider2D target)
     {
-        // Destroy special item when it touches the ground
+        // Remove special item when it touches the ground
         if (target.gameObject.CompareTag("PaddleResizer") || target.gameObject.CompareTag("FloorHelper"))
         {
             Destroy(target.gameObject);
