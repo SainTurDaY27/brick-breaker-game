@@ -93,6 +93,7 @@ public class BallScript : MonoBehaviour
             GameScript.bricksRemaining--;
         }
 
+		// Floor helper
 		if (target.gameObject.CompareTag("Floor"))
 		{
 			target.gameObject.SetActive(false);
@@ -102,6 +103,7 @@ public class BallScript : MonoBehaviour
 	
 	private void randomGeneratePaddleResizer(Collision2D target)
     {
+		// Check if the brick is in the set of bricks that will generate paddle resizer item
 		if (BrickScript.bricksWithPaddleResizerSet.Contains(brickCollisionCount))
         {
 			Instantiate(paddleResizer, target.transform.position, Quaternion.identity);
@@ -111,6 +113,7 @@ public class BallScript : MonoBehaviour
 	
 	private void randomGenerateFloorHelper(Collision2D target)
     {
+		// Check if the brick is in the set of bricks that will generate floor helper item
 	    if (BrickScript.bricksWithFloorHelperSet.Contains(brickCollisionCount))
         {
 			Instantiate(floorHelper, target.transform.position, Quaternion.identity);

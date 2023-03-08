@@ -34,6 +34,7 @@ public class PaddleScript : MonoBehaviour
         if (target.gameObject.CompareTag("PaddleResizer") && PaddleResizerScript.stillRemaining == true)
         {
 			Debug.Log("Paddle Resizer activated");
+			// Paddle Resizer will randomly increase or decrease the paddle size
             float random = Random.value;
                     if (random < 0.5F)
                     {
@@ -50,16 +51,17 @@ public class PaddleScript : MonoBehaviour
         {
             if (FloorHelperScript.isFloorActive == false)
             {
+				// Instantiate floor helper below the paddle
+				Debug.Log("Floor Helper activated");
+            	Transform floorHelper = Instantiate(floorHelperPrefab, new Vector3(0, -4.5F, 0), Quaternion.identity);
+				floorHelper.gameObject.SetActive(true);
+
+				// Remove floor helper after a certain amount of time
 				IEnumerator RemoveAfterSeconds(float seconds, GameObject gameObject)
     			{
            			yield return new WaitForSeconds(seconds);
             		gameObject.SetActive(false);
         		}
-
-				// Instantiate floor helper below the paddle
-				Debug.Log("Floor Helper activated");
-            	Transform floorHelper = Instantiate(floorHelperPrefab, new Vector3(0, -4.5F, 0), Quaternion.identity);
-				floorHelper.gameObject.SetActive(true);
 				StartCoroutine(RemoveAfterSeconds(FloorHelperScript.floorDuration, floorHelper.gameObject));	
             }
         }    
