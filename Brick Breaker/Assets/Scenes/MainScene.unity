@@ -435,6 +435,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &660990258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8512398742194109485, guid: 5954155dafa92794cb6a6d21d40ca925, type: 3}
+  m_PrefabInstance: {fileID: 774913439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &660990261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660990258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238d254cc8e2f674395a5d84dc9a7b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &660990262
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660990258}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &774913439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1010,6 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e013ce35901394c9cf3c4f62a9c174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brickCollisionCount: 0
   paddleResizer: {fileID: 7996574571534555429, guid: 097fe7df749bd7b499826db19bae63d6, type: 3}
   floorHelper: {fileID: 235729977619307648, guid: 837e74fc49e0d47479830e46716af54f, type: 3}
 --- !u!1001 &1948975601
